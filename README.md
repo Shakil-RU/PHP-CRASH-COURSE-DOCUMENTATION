@@ -1,4 +1,7 @@
-# Basic PHP Crash Course
+# PHP Crash Course
+Name: Abdullah Numan Shakil. </br>
+Department of Computer Science and Engineering.</br>
+University of Rajshahi.
 
 - [Variables](https://github.com/Shakil-RU/PHP_Crash_Course_Documentation/blob/main/variable.php)
 - [Operators](https://github.com/Shakil-RU/PHP_Crash_Course_Documentation/blob/main/operator.php)
