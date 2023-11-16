@@ -1,55 +1,57 @@
-<?php 
-// // function declaration.
+<?php
+/* ------------ Functions ----------- */
 
-// function addNumbers($a, $b) {
-//     $sum = $a + $b;
-//     return $sum;
-//    }
-//    $result = addNumbers(2, 3);
-//    echo "$result";
+/*
+** Function Syntax
+  function functionName($arg1, $arg2, ...) {
+    // code to be executed
+  }
 
-   // with default and mandatory argument.
-   function addNumbers($a, $b, $printResult = false) {
-    $sum = $a + $b;
-    if ($printResult) {
-    echo 'The result is ' . $sum;
-    }
-    return $sum;
-   }
-   $sum1 = addNumbers(1, 2);
-   $sum1 = addNumbers(3, 4, false);
-   $sum1 = addNumbers(5, 6, true); // it will print the result
+  - Functions have their own local scope as opposed to global scope
+*/
 
-
-   // sending argument by value
-
-   function modify($a) {
-    $a = 3;
-   }
-   $a = 2;
-   modify($a);
-   var_dump($a); // prints 2
-
-   // sending by reference.
-
-   function mdfy(&$a) {
-    $a = 3;
-   }
-   $a = 2;
-   mdfy($a);
-   var_dump($a); // prints 3
-
-   //Type hinting and return types.
-
- //  declare(strict_types=1); //strict_types declaration must be the very first statement in the script.
-function addNumber(int $a, int $b, bool $printSum): int {
- $sum = $a + $b;
- if ($printSum) {
- echo 'The sum is ' . $sum;
-
+function registerUser()
+{
+  echo 'User has been registered!';
 }
-return $sum;
+
+// Running a function
+registerUser();
+
+// Adding params
+function registerUser2($username)
+{
+  echo "User ${username} has been registered!";
 }
-addNumber(1, 2, true);
-addNumber(1, '2', true); // it fails when strict_types is 1
-addNumber(1, 'something', true); // it always fails
+
+// Pass in an argument
+registerUser2('Brad');
+
+// Returning values
+function add($num1, $num2)
+{
+  return $num1 + $num2;
+}
+
+$sum = add(5, 5);
+echo $sum;
+
+// Adding default values
+function subtract($num1 = 10, $num2 = 5)
+{
+  return $num1 - $num2;
+}
+
+echo subtract();
+
+// Assigning anonymous functions to variables. Often used for closures and callback functions
+$add = function ($num1, $num2) {
+  return $num1 + $num2;
+};
+
+echo $add(5, 5);
+
+// Arrow functions
+$multiply = fn($num1, $num2) => $num1 * $num2;
+
+echo $multiply(5, 5);

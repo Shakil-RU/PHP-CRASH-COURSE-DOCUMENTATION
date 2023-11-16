@@ -1,46 +1,86 @@
-
 <?php
-//while loop
-$i = 0;
-while ($i < 4) {
- echo $i . " ";
- $i++;
+
+/* -------- Loops & Iteration ------- */
+
+/* ------------ For Loop ------------ */
+
+/*
+** For Loop Syntax
+  for (initialize; condition; increment) {
+  // code to be executed
+  }
+*/
+
+for ($x = 0; $x <= 10; $x++) {
+  echo "Number: $x <br>";
 }
 
-//do...while
-echo "</br>";
-echo "with while: ";
-$i = 1;
-while ($i < 0) {
- echo $i . " ";
- $i++;
+/* ------------ While Loop ------------ */
+
+/*
+** While Loop Syntax
+  while (condition) {
+  // code to be executed
+  }
+*/
+
+$x = 1;
+
+while ($x <= 5) {
+  echo "Number: $x <br>";
+  $x++;
 }
-echo "with do-while: ";
-$i = 1;
+
+/* ---------- Do While Loop --------- */
+
+/*
+** Do While Loop Syntax
+  do {
+  // code to be executed
+  } while (condition);
+
+do...while loop will always execute the block of code once, even if the condition is false.
+*/
+
 do {
- echo $i . " ";
- $i++;
-} while ($i < 0);
+  echo "Number: $x <br>";
+  $x++;
+} while ($x <= 5);
 
-//for
-echo "</br>";
-for ($i = 1; $i < 10; $i++) {
-    echo $i . " ";
-   }
-   echo "</br>";
-   $names = ['Harry', 'Ron', 'Hermione'];
-  for ($i = 0; $i < count($names); $i++) {
-  echo $names[$i] . " ";
+/* ---------- Foreach Loop ---------- */
+
+/*
+** Foreach Loop Syntax
+  foreach ($array as $value) {
+  // code to be executed
+  }
+*/
+
+// Loop through an array
+
+$numbers = [1, 2, 3, 4, 5];
+
+foreach ($numbers as $x) {
+  echo "Number: $x <br>";
 }
 
-//foreach
-echo "</br>";
-$names = ['Harry', 'Ron', 'Hermione'];
-foreach ($names as $name) {
- echo $name . " ";
+// Use the indexes within the loop
+
+$posts = ['Post One', 'Post Two', 'Post Three'];
+
+foreach ($posts as $index => $post) {
+  echo "${index} - ${post} <br>";
 }
-echo "</br>";
-foreach ($names as $key => $name) {
- echo $key . " -> " . $name . " ";
+
+// Use the keys within the loop for an associative array
+
+$person = [
+  'first_name' => 'Brad',
+  'last_name' => 'Traversy',
+  'email' => 'brad@gmail.com',
+];
+
+// Get Keys
+foreach ($person as $key => $val) {
+  echo "${key} - ${val} <br>";
 }
-?>
